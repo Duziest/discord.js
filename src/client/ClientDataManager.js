@@ -55,6 +55,8 @@ class ClientDataManager {
       channel = new DMChannel(this.client, data);
     } else if (data.type === Constants.ChannelTypes.GROUP_DM) {
       channel = new GroupDMChannel(this.client, data);
+    } else if (data.type === Constants.ChannelTypes.STAGE) {
+      channel = null;
     } else {
       guild = guild || this.client.guilds.get(data.guild_id);
       if (already) {
