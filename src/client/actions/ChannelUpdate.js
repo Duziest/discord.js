@@ -16,6 +16,8 @@ class ChannelUpdateAction extends Action {
     if (channel) {
       const oldChannel = Util.cloneObject(channel);
 
+if(!ChannelTypes.GROUP_DM) {
+
       // If the channel is changing types, we need to follow a different process
       if (ChannelTypes[channel.type.toUpperCase()] !== data.type) {
         // Determine which channel class we're changing to
@@ -70,5 +72,7 @@ class ChannelUpdateAction extends Action {
  * @param {Channel} oldChannel The channel before the update
  * @param {Channel} newChannel The channel after the update
  */
+
+}
 
 module.exports = ChannelUpdateAction;
